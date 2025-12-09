@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTAR Thesis Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UTAR Thesis Template</h1>
+            <p class="subtitle">Universiti Tunku Abdul Rahman (UTAR) Thesis Template</p>
+        </header>
+        
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>About This Template</h2>
+                    <p>A LaTeX template for preparing thesis or dissertation documents at Universiti Tunku Abdul Rahman (UTAR). This template provides a professional, well-structured format that meets UTAR's academic requirements.</p>
+                    <div class="pdf-preview">
+                        <a href="main-v1.pdf" target="_blank" class="pdf-button">
+                            📄 Preview Template PDF
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>UTAR Compliant</h3>
+                    <p>Designed to meet UTAR's thesis formatting requirements and guidelines</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Professional Design</h3>
+                    <p>Clean, modern layout optimized for academic writing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Easy to Use</h3>
+                    <p>Well-documented and customizable template structure</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Template Information</h2>
+                <div class="info-content">
+                    <ul>
+                        <li><strong>Original Template Author:</strong> Tan Jing Jie</li>
+                        <li><strong>Template Website:</strong> <a href="https://utartemplete.jingjietan.com" target="_blank">https://utartemplete.jingjietan.com</a></li>
+                        <li><strong>License:</strong> UTAR Thesis Template License (Attribution Required) - See <a href="LICENSE" target="_blank">LICENSE</a> file</li>
+                        <li><strong>Note:</strong> Please acknowledge the original author when using this template (see Acknowledgement section below)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Getting Started</h2>
+                <div class="info-content">
+                    <h3>Option 1: Using Overleaf (Recommended for Beginners)</h3>
+                    <p><a href="https://www.overleaf.com/" target="_blank">Overleaf</a> is an online LaTeX editor that requires no installation:</p>
+                    <ol>
+                        <li>Go to <a href="https://www.overleaf.com/" target="_blank">https://www.overleaf.com/</a></li>
+                        <li>Sign up for a free account (or log in if you already have one)</li>
+                        <li>Click "New Project" → "Upload Project"</li>
+                        <li>Upload all files from this template</li>
+                        <li>Set the main file to <code>main-v1.tex</code> (Menu → Main document)</li>
+                        <li>Click "Recompile" to build your document</li>
+                    </ol>
+                    <p><strong>Advantages of Overleaf:</strong></p>
+                    <ul>
+                        <li>No installation required</li>
+                        <li>Works on any device with internet access</li>
+                        <li>Automatic compilation</li>
+                        <li>Real-time collaboration</li>
+                        <li>Free tier available</li>
+                        <li>Built-in LaTeX distribution</li>
+                    </ul>
+
+                    <h3>Option 2: Installing LaTeX Locally</h3>
+                    
+                    <h4>For macOS</h4>
+                    <p><strong>Method 1: MacTeX (Full Distribution - Recommended)</strong></p>
+                    <ol>
+                        <li>Download MacTeX from: <a href="https://www.tug.org/mactex/" target="_blank">https://www.tug.org/mactex/</a></li>
+                        <li>The download is large (~4GB) but includes everything you need</li>
+                        <li>Install the <code>.pkg</code> file</li>
+                        <li>Use TeXShop (included) or any LaTeX editor</li>
+                    </ol>
+                    <p><strong>Method 2: BasicTeX (Smaller Installation)</strong></p>
+                    <ol>
+                        <li>Install Homebrew if you don't have it</li>
+                        <li>Install BasicTeX: <code>brew install --cask basictex</code></li>
+                        <li>Install additional packages (if needed): <code>sudo tlmgr install collection-latexextra</code></li>
+                    </ol>
+                    <p><strong>Recommended LaTeX Editors for macOS:</strong></p>
+                    <ul>
+                        <li><a href="https://www.tug.org/mactex/" target="_blank">TeXShop</a> (included with MacTeX)</li>
+                        <li><a href="https://www.texstudio.org/" target="_blank">TeXstudio</a></li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">VS Code</a> with LaTeX Workshop extension</li>
+                        <li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a> with LaTeXTools</li>
+                    </ul>
+
+                    <h4>For Windows</h4>
+                    <p><strong>Method 1: MiKTeX (Recommended)</strong></p>
+                    <ol>
+                        <li>Download MiKTeX from: <a href="https://miktex.org/download" target="_blank">https://miktex.org/download</a></li>
+                        <li>Run the installer</li>
+                        <li>Choose "Install missing packages on-the-fly" when prompted</li>
+                        <li>MiKTeX will automatically download required packages as needed</li>
+                    </ol>
+                    <p><strong>Method 2: TeX Live</strong></p>
+                    <ol>
+                        <li>Download TeX Live from: <a href="https://www.tug.org/texlive/windows.html" target="_blank">https://www.tug.org/texlive/windows.html</a></li>
+                        <li>Run the installer</li>
+                        <li>Follow the installation wizard (this may take some time)</li>
+                    </ol>
+                    <p><strong>Recommended LaTeX Editors for Windows:</strong></p>
+                    <ul>
+                        <li><a href="https://www.texstudio.org/" target="_blank">TeXstudio</a> (recommended)</li>
+                        <li><a href="https://www.tug.org/texworks/" target="_blank">TeXworks</a> (included with TeX Live)</li>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">VS Code</a> with LaTeX Workshop extension</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Compilation Instructions</h2>
+                <div class="info-content">
+                    <h3>Using Command Line</h3>
+                    <ol>
+                        <li>Navigate to the template directory</li>
+                        <li>Compile the document (run twice for table of contents and cross-references):
+                            <pre><code>pdflatex main-v1.tex
+bibtex main-v1
+pdflatex main-v1.tex
+pdflatex main-v1.tex</code></pre>
+                            Or use a single command that runs all steps:
+                            <pre><code>latexmk -pdf main-v1.tex</code></pre>
+                        </li>
+                    </ol>
+
+                    <h3>Using LaTeX Editors</h3>
+                    <p>Most LaTeX editors have a "Build" or "Compile" button. Click it to compile your document. You may need to compile multiple times for:</p>
+                    <ul>
+                        <li>Table of contents</li>
+                        <li>List of figures</li>
+                        <li>List of tables</li>
+                        <li>Cross-references</li>
+                        <li>Bibliography</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Template Structure</h2>
+                <div class="info-content">
+                    <pre><code>be/
+├── main-v1.tex          # Main LaTeX file
+├── references.bib       # Bibliography file
+├── admins/              # Administrative pages
+│   ├── abstract.tex
+│   ├── acknowledgment.tex
+│   ├── approvalsheet.tex
+│   ├── coverpage.tex
+│   ├── declaration.tex
+│   ├── submissionsheet.tex
+│   └── titlepage.tex
+├── contents/            # Chapter files
+│   ├── c1intro.tex
+│   ├── c2lit.tex
+│   ├── c3aflps.tex
+│   ├── c4picepr.tex
+│   ├── c5jam.tex
+│   ├── c6adam.tex
+│   ├── c7nlu.tex
+│   ├── c8conclusion.tex
+│   └── abbreviations.tex
+├── appendices/          # Appendix files
+│   └── appendix.tex
+└── figures/             # Place your figures here
+    └── NN.pdf</code></pre>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Customizing the Template</h2>
+                <div class="info-content">
+                    <ol>
+                        <li><strong>Title and Personal Information:</strong> Edit the placeholder text in:
+                            <ul>
+                                <li><code>admins/coverpage.tex</code></li>
+                                <li><code>admins/titlepage.tex</code></li>
+                                <li><code>admins/abstract.tex</code></li>
+                                <li><code>admins/approvalsheet.tex</code></li>
+                                <li><code>admins/submissionsheet.tex</code></li>
+                                <li><code>admins/declaration.tex</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Content:</strong> Replace "Your content here" placeholders in chapter files</li>
+                        <li><strong>Figures:</strong> Add your figure PDFs to the <code>figures/</code> folder and reference them using:
+                            <pre><code>\includegraphics[width=0.8\textwidth]{your-figure-name.pdf}</code></pre>
+                        </li>
+                        <li><strong>Bibliography:</strong> Add your references to <code>references.bib</code> and cite them using:
+                            <pre><code>\cite{key}      % For in-text citations
+\citep{key}     % For parenthetical citations
+\citet{key}     % For textual citations</code></pre>
+                        </li>
+                        <li><strong>Abbreviations:</strong> Add your abbreviations to <code>contents/abbreviations.tex</code></li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Troubleshooting</h2>
+                <div class="info-content">
+                    <h3>Table of Contents Not Appearing</h3>
+                    <ul>
+                        <li>Compile the document <strong>twice</strong> (LaTeX needs two passes to generate the TOC)</li>
+                        <li>Ensure <code>main-v1.toc</code> file is generated after first compilation</li>
+                    </ul>
+
+                    <h3>Bibliography Not Appearing</h3>
+                    <ul>
+                        <li>Run the full compilation sequence: <code>pdflatex</code> → <code>bibtex</code> → <code>pdflatex</code> → <code>pdflatex</code></li>
+                        <li>Check that <code>references.bib</code> contains valid BibTeX entries</li>
+                        <li>Ensure you have citations in your document using <code>\cite{}</code>, <code>\citep{}</code>, or <code>\citet{}</code></li>
+                    </ul>
+
+                    <h3>Missing Packages</h3>
+                    <ul>
+                        <li>If you get "File not found" errors for packages, install them:
+                            <ul>
+                                <li><strong>MiKTeX:</strong> Will prompt to install missing packages automatically</li>
+                                <li><strong>TeX Live:</strong> Use <code>tlmgr install &lt;package-name&gt;</code></li>
+                                <li><strong>MacTeX:</strong> Use <code>sudo tlmgr install &lt;package-name&gt;</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Cross-References Not Working</h3>
+                    <ul>
+                        <li>Compile the document <strong>twice</strong> to resolve all cross-references</li>
+                        <li>Ensure labels are unique and properly formatted: <code>\label{key}</code> and <code>\ref{key}</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Acknowledgement</h2>
+                <div class="info-content">
+                    <p>This thesis template was originally developed by <strong>Tan Jing Jie</strong>.</p>
+                    <p>If you use this template for your thesis or dissertation, please acknowledge the original author in your acknowledgements section. An example acknowledgement is already included in <code>admins/acknowledgment.tex</code>:</p>
+                    <blockquote>
+                        <strong>Template Acknowledgement:</strong> This thesis was prepared using a template originally developed by Tan Jing Jie. The template is available at: <a href="https://utartemplete.jingjietan.com" target="_blank">https://utartemplete.jingjietan.com</a>
+                    </blockquote>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Template Website</h2>
+                <div class="info-content">
+                    <p>For the latest version of this template and additional resources, visit:</p>
+                    <p><strong><a href="https://utartemplete.jingjietan.com" target="_blank">https://utartemplete.jingjietan.com</a></strong></p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Support</h2>
+                <div class="info-content">
+                    <p>For issues, questions, or contributions related to this template, please refer to the template website or contact the original author.</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>License</h2>
+                <div class="info-content">
+                    <p><strong>License Name:</strong> UTAR Thesis Template License (Attribution Required)<br>
+                    <strong>License Type:</strong> Permissive with Attribution Requirement</p>
+                    
+                    <p>This template is licensed under the UTAR Thesis Template License:</p>
+                    <ul>
+                        <li><strong>Attribution:</strong> Please acknowledge the original author (Tan Jing Jie) in your thesis/dissertation acknowledgements section when using this template</li>
+                        <li><strong>Free to Use:</strong> You may use, modify, and distribute this template freely</li>
+                        <li><strong>Contributions:</strong> If you contribute to this template (e.g., via pull requests), your contributions are subject to the same license. You only need to acknowledge the license name and description, not the full license text</li>
+                    </ul>
+                    
+                    <p><strong>Full License:</strong> See <a href="LICENSE" target="_blank">LICENSE</a> file for complete terms and conditions.</p>
+                    <p class="license-note"><strong>Quick Summary:</strong> Use freely, and please give credit to the original author in your acknowledgements.</p>
+                    <p class="license-note">The Template is provided "as is", without warranty of any kind. For questions about this license, please visit: <a href="https://research.jingjietan.com/q?=UTARTEMPLATE" target="_blank">research.jingjietan.com</a></p>
+                    <p><em><strong>Note:</strong> This template follows UTAR thesis/dissertation formatting guidelines. Please verify with your department for any specific requirements or updates to the formatting guidelines.</em></p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Tan Jing Jie. UTAR Thesis Template License (Attribution Required)</p>
+            <p>Template Website: <a href="https://utartemplete.jingjietan.com" target="_blank">https://utartemplete.jingjietan.com</a></p>
+            <p>For questions: <a href="https://research.jingjietan.com/q?=UTARTEMPLATE" target="_blank">research.jingjietan.com</a></p>
+        </footer>
+    </div>
+    
+    <div id="message" class="message hidden"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
