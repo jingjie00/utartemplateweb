@@ -5,7 +5,7 @@ A website for the Universiti Tunku Abdul Rahman (UTAR) Thesis Template project, 
 ## Template Information
 
 - **Original Template Author**: Tan Jing Jie
-- **Template Website**: https://research.jingjietan.com/q?=UTARTEMPLATE
+- **Template Website**: https://utartemplate.jingjietan.com
 - **License**: UTAR Thesis Template License (Attribution Required) - See [LICENSE](LICENSE) file
 - **Note**: Please acknowledge the original author when using this template (see Acknowledgement section below)
 
@@ -200,12 +200,12 @@ This thesis template was originally developed by **Tan Jing Jie**.
 
 If you use this template for your thesis or dissertation, please acknowledge the original author in your acknowledgements section. An example acknowledgement is already included in `admins/acknowledgment.tex`:
 
-> **Template Acknowledgement**: This thesis was prepared using a template originally developed by Tan Jing Jie. The template is available at: https://research.jingjietan.com/q?=UTARTEMPLATE
+> **Template Acknowledgement**: This thesis was prepared using a template originally developed by Tan Jing Jie. The template is available at: https://utartemplate.jingjietan.com
 
 ## Template Website
 
 For the latest version of this template and additional resources, visit:
-**https://research.jingjietan.com/q?=UTARTEMPLATE**
+**https://utartemplate.jingjietan.com**
 
 ## Support
 
