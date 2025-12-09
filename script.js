@@ -18,6 +18,9 @@ function showMessage() {
 
 // Add some interactive animations on scroll
 document.addEventListener('DOMContentLoaded', () => {
+    // Elements to animate
+    const animatedElements = document.querySelectorAll('.feature-card, .info-section, .hero-content, footer');
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -26,18 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Only animate once
             }
         });
     }, observerOptions);
     
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    animatedElements.forEach((el, index) => {
+        el.classList.add('scroll-animate');
+        // Add staggered delay for feature cards
+        if (el.classList.contains('feature-card')) {
+            el.style.transitionDelay = `${index * 100}ms`;
+        }
+        observer.observe(el);
     });
-});
 
+    // Show welcome message
+    setTimeout(showMessage, 1000);
+});
