@@ -1,35 +1,128 @@
 :root {
-    /* Color Palette - Premium Dark Mode */
+    /* Shared Colors */
     --primary: #6366f1;
-    /* Indigo 500 */
     --primary-dark: #4f46e5;
-    /* Indigo 600 */
     --secondary: #ec4899;
-    /* Pink 500 */
     --accent: #8b5cf6;
-    /* Violet 500 */
-    --background: #0f172a;
-    /* Slate 900 */
-    --surface: #1e293b;
+
+    /* Light Theme (Default) */
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #1e293b;
     /* Slate 800 */
+    --text-heading: #0f172a;
+    /* Slate 900 */
+    --text-muted: #475569;
+    /* Slate 600 - Darker for better contrast */
+    --border: rgba(0, 0, 0, 0.15);
+    /* Slightly stronger border */
 
-    --text-main: #f8fafc;
-    /* Slate 50 */
-    --text-muted: #94a3b8;
-    /* Slate 400 */
-    --border: rgba(255, 255, 255, 0.1);
-
-    --glass-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    /* Slightly more transparent but still solid enough */
+    --glass-border: rgba(255, 255, 255, 0.8);
     --glass-blur: blur(16px);
 
     --radius-lg: 24px;
     --radius-md: 16px;
     --radius-sm: 8px;
 
+    --shadow-main: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.1);
+
+    --btn-secondary-bg: #fff;
+    --btn-secondary-hover: #f8fafc;
+
+    /* UI Elements */
+    --code-bg: #f1f5f9;
+    /* Slate 100 */
+    --code-text: #3730a3;
+    /* Indigo 800 */
+    --tab-header-bg: rgba(0, 0, 0, 0.05);
+    /* Slightly darker for better visibility */
+
+    /* Badge Colors (Light Theme) */
+    --badge-success-text: #065f46;
+    /* Emerald 800 */
+    --badge-success-bg: #d1fae5;
+    /* Emerald 100 */
+    --badge-warning-text: #9d174d;
+    /* Pink 800 */
+    --badge-warning-bg: #fce7f3;
+    /* Pink 100 */
+
+    /* Tip/Warning Colors */
+    --tip-bg: #fff7ed;
+    /* Orange 50 */
+    --tip-border: #fed7aa;
+    /* Orange 200 */
+    --tip-text: #c2410c;
+    /* Orange 700 - Darker for readability */
+
+    /* Acknowledgement Section */
+    --ack-bg: rgba(255, 255, 255, 0.3);
+    /* Semi-transparent for glass effect */
+    --citation-bg: rgba(255, 255, 255, 0.5);
+    /* Inner glass layer */
+    --citation-text: #334155;
+    --quote-color: rgba(99, 102, 241, 0.1);
+
+    --copy-btn-bg: rgba(255, 255, 255, 0.5);
+    --copy-btn-text: #0f172a;
+
+    /* High Contrast Gradient for Light Mode */
+    --text-gradient: linear-gradient(135deg, #4f46e5 0%, #be185d 100%);
+}
+
+[data-theme="dark"] {
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+
+    --text-heading: #ffffff;
+
     --shadow-main: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
     --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+
+    --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+    --btn-secondary-hover: rgba(255, 255, 255, 0.1);
+
+    /* UI Elements */
+    --code-bg: rgba(0, 0, 0, 0.3);
+    --code-text: #fbbf24;
+    --tab-header-bg: rgba(0, 0, 0, 0.2);
+
+    /* Badge Colors (Dark Theme) */
+    --badge-success-text: #34d399;
+    /* Emerald 400 */
+    --badge-success-bg: rgba(52, 211, 153, 0.1);
+    --badge-warning-text: #f472b6;
+    /* Pink 400 */
+    --badge-warning-bg: rgba(244, 114, 182, 0.1);
+
+    /* Tip/Warning Colors */
+    --tip-bg: rgba(245, 158, 11, 0.1);
+    --tip-border: rgba(245, 158, 11, 0.2);
+    --tip-text: #fbbf24;
+
+    /* Acknowledgement Section */
+    --ack-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+    --citation-bg: rgba(15, 23, 42, 0.8);
+    --citation-text: #cbd5e1;
+    --quote-color: rgba(99, 102, 241, 0.05);
+
+    --copy-btn-bg: rgba(255, 255, 255, 0.1);
+    --copy-btn-text: #ffffff;
+
+    /* Lighter Gradient for Dark Mode */
+    --text-gradient: linear-gradient(135deg, #a5b4fc 0%, #f472b6 100%);
 }
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&family=Fira+Code:wght@400;500&display=swap');
 
@@ -122,12 +215,12 @@ h2,
 h3,
 h4 {
     font-family: 'Outfit', sans-serif;
-    color: #fff;
+    color: var(--text-heading);
     line-height: 1.1;
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #a5b4fc 0%, #f472b6 100%);
+    background: var(--text-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -189,7 +282,7 @@ a:hover {
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-heading);
     letter-spacing: -0.02em;
 }
 
@@ -210,16 +303,32 @@ a:hover {
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: var(--text-heading);
 }
 
 .github-icon-link {
     font-size: 1.2rem;
-    color: #fff !important;
+    color: var(--text-heading) !important;
     opacity: 0.8;
 }
 
 .github-icon-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    opacity: 0.8;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.nav-icon-btn:hover {
     opacity: 1;
     transform: scale(1.1);
 }
@@ -298,13 +407,13 @@ a:hover {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
+    background: var(--btn-secondary-bg);
+    color: var(--text-heading);
     border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--btn-secondary-hover);
     transform: translateY(-2px);
 }
 
@@ -455,7 +564,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #e2e8f0;
+    color: var(--text-main);
 }
 
 .highlight-list li i {
@@ -470,7 +579,7 @@ a:hover {
 .tabs-header {
     display: flex;
     border-bottom: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--tab-header-bg);
 }
 
 .tab-btn {
@@ -490,8 +599,8 @@ a:hover {
 }
 
 .tab-btn:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-heading);
+    background: var(--btn-secondary-hover);
 }
 
 .tab-btn.active {
@@ -558,20 +667,20 @@ a:hover {
 
 .advanced-tip {
     margin-top: 30px;
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    background: var(--tip-bg);
+    border: 1px solid var(--tip-border);
     padding: 20px;
     border-radius: var(--radius-sm);
 }
 
 .advanced-tip h4 {
-    color: #fbbf24;
+    color: var(--tip-text);
     margin-bottom: 8px;
     font-size: 1rem;
 }
 
 .advanced-tip p {
-    color: #e2e8f0;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -631,11 +740,12 @@ a:hover {
 }
 
 .structure-list code {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--code-bg);
     padding: 4px 8px;
     border-radius: 4px;
     font-family: 'Fira Code', monospace;
-    color: #a5b4fc;
+    font-weight: 500;
+    color: var(--primary);
     margin-right: 12px;
 }
 
@@ -643,7 +753,7 @@ a:hover {
     padding: 30px;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: var(--text-main);
     line-height: 1.5;
     white-space: pre;
     overflow-x: auto;
@@ -655,7 +765,7 @@ a:hover {
     padding: 16px;
     border-radius: 0 8px 8px 0;
     font-size: 0.9rem;
-    color: #e2e8f0;
+    color: var(--text-main);
 }
 
 /* FAQ */
@@ -709,18 +819,19 @@ a:hover {
 }
 
 .faq-body code {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--code-bg);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Fira Code', monospace;
     font-size: 0.85em;
-    color: #fbbf24;
+    font-weight: 500;
+    color: var(--code-text);
 }
 
 /* Acknowledgement Section */
 .ack-container {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: var(--ack-bg);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 60px;
     position: relative;
@@ -734,7 +845,7 @@ a:hover {
     left: 20px;
     font-size: 15rem;
     font-family: serif;
-    color: rgba(99, 102, 241, 0.05);
+    color: var(--quote-color);
     pointer-events: none;
 }
 
@@ -747,7 +858,7 @@ a:hover {
 }
 
 .citation-box {
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--citation-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 30px;
@@ -759,7 +870,7 @@ a:hover {
 .citation-box code {
     font-family: 'Fira Code', monospace;
     display: block;
-    color: #cbd5e1;
+    color: var(--citation-text);
     line-height: 1.7;
     font-size: 0.95rem;
 }
@@ -768,9 +879,9 @@ a:hover {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--copy-btn-bg);
     border: 1px solid var(--border);
-    color: #fff;
+    color: var(--copy-btn-text);
     padding: 8px 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -785,6 +896,7 @@ a:hover {
 .copy-btn:hover {
     background: var(--primary);
     border-color: var(--primary);
+    color: #fff;
 }
 
 .license-info {
@@ -796,7 +908,7 @@ a:hover {
 .license-info h3 {
     font-size: 1.25rem;
     margin-bottom: 16px;
-    color: #fff;
+    color: var(--text-heading);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -814,13 +926,17 @@ a:hover {
     align-items: center;
     gap: 8px;
     padding: 6px 14px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: var(--badge-success-bg);
+    border: 1px solid transparent;
     border-radius: 100px;
-    color: #34d399;
-    /* Emerald 400 */
+    color: var(--badge-success-text);
     font-size: 0.85rem;
     font-weight: 500;
+}
+
+.license-badge.warning {
+    background: var(--badge-warning-bg);
+    color: var(--badge-warning-text);
 }
 
 /* Footer */

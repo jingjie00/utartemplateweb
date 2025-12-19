@@ -85,6 +85,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(styleSheet);
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                html.removeAttribute('data-theme');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            setTheme(isDark ? 'light' : 'dark');
+        });
+    }
 });
 
 function copyCitation() {
@@ -92,11 +124,11 @@ function copyCitation() {
     navigator.clipboard.writeText(text).then(() => {
         const btn = document.querySelector('.copy-btn');
         const originalHTML = btn.innerHTML;
-        
+
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         btn.style.background = '#10b981';
         btn.style.borderColor = '#10b981';
-        
+
         setTimeout(() => {
             btn.innerHTML = originalHTML;
             btn.style.background = '';
