@@ -117,6 +117,42 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(isDark ? 'light' : 'dark');
         });
     }
+
+    // Mobile Menu Logic
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            const isOpen = navLinks.classList.contains('active');
+
+            navLinks.classList.toggle('active');
+            body.classList.toggle('menu-open');
+
+            // Toggle Icon
+            const icon = mobileBtn.querySelector('i');
+            if (isOpen) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
 });
 
 function copyCitation() {
